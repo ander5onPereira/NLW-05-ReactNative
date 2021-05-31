@@ -7,6 +7,7 @@ import {
 } from "react-native";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 import colors from "../../styles/colors";
+import fonts from "../../styles/fonts";
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
 }
@@ -21,15 +22,14 @@ export function Button({ title, ...rest }: ButtonProps) {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.green,
-    justifyContent: "center",
-    borderRadius: 16,
-    marginBottom: 10,
     height: 56,
-    paddingHorizontal: 10,
+    borderRadius: 16,
+    justifyContent: "center",
+    alignItems: "center",
   },
   buttonText: {
     color: colors.white,
-    fontSize: 24,
-    marginTop: -5,
+    fontSize: 16,
+    fontFamily: fonts.heading,
   },
 });

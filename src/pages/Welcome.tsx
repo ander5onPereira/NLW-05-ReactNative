@@ -8,12 +8,16 @@ import {
   Dimensions,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import colors from "../../../styles/colors";
+import colors from "../../styles/colors";
 import watering from "../../assets/watering.png";
 import { Feather } from "@expo/vector-icons";
-import fonts from "../../../styles/fonts";
-
+import fonts from "../../styles/fonts";
+import { useNavigation } from "@react-navigation/core";
 export function Welcome() {
+  const navigation = useNavigation();
+  function handlerStart() {
+    navigation.navigate("User");
+  }
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>
@@ -26,7 +30,11 @@ export function Welcome() {
         Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
         sempre que precisar.
       </Text>
-      <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.7}
+        onPress={handlerStart}
+      >
         <Feather name="chevron-right" style={styles.buttonIcon} />
       </TouchableOpacity>
       <StatusBar style="auto" />

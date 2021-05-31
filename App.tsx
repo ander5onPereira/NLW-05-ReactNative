@@ -1,13 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Welcome } from "./src/pages/Welcome";
 import {
-  useFonts,
   Jost_400Regular,
   Jost_600SemiBold,
+  useFonts,
 } from "@expo-google-fonts/jost";
 import AppLoading from "expo-app-loading";
+import React from "react";
+import "react-native-gesture-handler";
+import Routes from "./src/routes";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Jost_400Regular,
@@ -16,10 +15,5 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-  return (
-    <Welcome />
-    //   <StatusBar style="auto" />
-    // <View style={{}}>
-    // </View>
-  );
+  return <Routes />;
 }
